@@ -1,0 +1,72 @@
+.main {
+    position: relative;
+    display: block;
+    border-radius: 20px;
+    width: 300px;
+    margin-bottom: 30px;
+    margin-right: 20px;
+    border: 2px solid #1F2A63;
+    overflow: hidden;
+}
+
+.bottom {
+    position: relative;
+    display: block;
+    background-color: #1F2A63;
+    height: 50px;
+    width: 100%;
+    margin-top: -5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 15px;
+    color: white;
+}
+
+.like {
+    background-image: url(../../images/like.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    margin-right: 20px;
+    margin-left: auto;
+}
+
+.like:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.like_active {
+    background-image: url(../../images/like_active.svg);
+}
+
+.image {
+    width: 300px;
+    height: 300px;
+}
+
+.delete {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background-image: url(../../images/delete.svg);
+    background-position: center;
+    background-size: cover;
+    right: 10px;
+    top: 10px;
+}
+
+.delete:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 660px) {
+    .main {
+        margin-right: 0;
+    }
+}

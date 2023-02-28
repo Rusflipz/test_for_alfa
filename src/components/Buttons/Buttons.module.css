@@ -1,0 +1,30 @@
+.main {
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    height: 35px;
+}
+
+@media screen and (max-width: 1620px) {
+    .main {
+        width: 975px;
+        align-items: center;
+    }
+
+}
+
+@media screen and (max-width: 1220px) {
+    .main {
+        width: 100%;
+        position: relative;
+        flex-direction: column;
+        height: fit-content;
+        margin: 0 auto;
+        margin-top: 20px;
+        align-items: center;
+    }
+
+}
