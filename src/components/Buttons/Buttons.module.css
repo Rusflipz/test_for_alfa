@@ -1,0 +1,83 @@
+.main {
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    height: 35px;
+}
+
+
+.logo {
+    width: 100px;
+    height: 100px;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../../images/logo-svgrepo-com.svg);
+    margin-left: 50px;
+    margin-top: calc(25px);
+}
+
+.button {
+    cursor: pointer;
+    width: fit-content;
+    height: 35px;
+    border: none;
+    background-color: transparent;
+    border-radius: 20px;
+    border: 2px #1F2A63 solid;
+    color: #1F2A63;
+    font-weight: normal;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-right: 20px;
+}
+
+.button:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+.button_active {
+    color: white;
+    background-color: #1F2A63;
+}
+
+.button:hover:enabled {
+    color: white;
+    background-color: #1F2A63;
+}
+
+
+@media screen and (max-width: 1620px) {
+    .main {
+        width: 975px;
+        align-items: center;
+    }
+
+    .button {
+        width: 33%;
+    }
+}
+
+
+
+@media screen and (max-width: 1220px) {
+    .main {
+        width: 100%;
+        position: relative;
+        flex-direction: column;
+        height: fit-content;
+        margin: 0 auto;
+        margin-top: 20px;
+        align-items: center;
+    }
+
+    .button {
+        margin: 0;
+        margin-bottom: 10px;
+        font-size: 15px;
+        width: 300px;
+    }
+}
