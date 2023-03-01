@@ -1,0 +1,1 @@
+# build для GH pages
