@@ -8,6 +8,7 @@ import styles from "./Card.module.css";
 function Card(props: { item: Icard }) {
 
     const dispatch: Dispatch<any> = useDispatch()
+    
     const { array } = useSelector(dataSelector);
 
     let index = array.findIndex((el: { id: number; }) => el.id === props.item.id);
