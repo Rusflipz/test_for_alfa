@@ -50,7 +50,6 @@ export const dataSlice = createSlice({
     }
 })
 
-
 export const {
     fetchCards, fetchCardsSuccess, fetchCardsFail, setFilter, setFilterArrayState, setIsArrayEmpty
 } = dataSlice.actions

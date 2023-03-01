@@ -8,8 +8,9 @@ import styles from "./Cards.module.css";
 
 function Cards() {
 
+    const dispatch: Dispatch<any> = useDispatch();
+
     const { array, isFiltered, isFilteredArrayEmpty, isArrayEmpty } = useSelector(dataSelector);
-    const dispatch: Dispatch<any> = useDispatch()
 
     useEffect(() => {
         if (isFiltered && array.filter((elem: { isLike: boolean; }) =>

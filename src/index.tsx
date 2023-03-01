@@ -5,7 +5,7 @@ import App from './components/App/App';
 import { Provider } from 'react-redux';
 import { rootReducer } from './services/reducers/rootReducer';
 import { configureStore } from '@reduxjs/toolkit';
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 
 export const store = configureStore({ reducer: rootReducer });
 

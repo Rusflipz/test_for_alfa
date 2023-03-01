@@ -1,7 +1,7 @@
 {
   "name": "test_alfa",
   "version": "0.1.0",
-  "homepage": "https://github.com/Rusflipz/test_for_alfa_GH_Pages", 
+  "homepage": "https://rusflipz.github.io/test_for_alfa/", 
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
