@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/test_for_alfa/static/css/main.c8cb89d1.css",
-    "main.js": "/test_for_alfa/static/js/main.85b8740b.js",
+    "main.js": "/test_for_alfa/static/js/main.dce55ad0.js",
     "static/media/1647189487_29-krot-info-p-ti-mne-nravishsya-mem-smeshnie-foto-33.jpg": "/test_for_alfa/static/media/1647189487_29-krot-info-p-ti-mne-nravishsya-mem-smeshnie-foto-33.bc91c6c4fc8c1fc1e996.jpg",
     "static/media/logo-svgrepo-com.svg": "/test_for_alfa/static/media/logo-svgrepo-com.23494fbc051ef2165e3a.svg",
     "static/media/delete.svg": "/test_for_alfa/static/media/delete.1fc4353853567b614825.svg",
@@ -9,10 +9,10 @@
     "index.html": "/test_for_alfa/index.html",
     "static/media/like_active.svg": "/test_for_alfa/static/media/like_active.8d3b508a98a65f952365.svg",
     "main.c8cb89d1.css.map": "/test_for_alfa/static/css/main.c8cb89d1.css.map",
-    "main.85b8740b.js.map": "/test_for_alfa/static/js/main.85b8740b.js.map"
+    "main.dce55ad0.js.map": "/test_for_alfa/static/js/main.dce55ad0.js.map"
   },
   "entrypoints": [
     "static/css/main.c8cb89d1.css",
-    "static/js/main.85b8740b.js"
+    "static/js/main.dce55ad0.js"
   ]
 }
