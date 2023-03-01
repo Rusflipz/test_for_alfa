@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Rusflipz/test_for_alfa_GH_Pages/static/css/main.4badc10d.css",
-    "main.js": "/Rusflipz/test_for_alfa_GH_Pages/static/js/main.85b8740b.js",
-    "static/media/1647189487_29-krot-info-p-ti-mne-nravishsya-mem-smeshnie-foto-33.jpg": "/Rusflipz/test_for_alfa_GH_Pages/static/media/1647189487_29-krot-info-p-ti-mne-nravishsya-mem-smeshnie-foto-33.bc91c6c4fc8c1fc1e996.jpg",
-    "static/media/logo-svgrepo-com.svg": "/Rusflipz/test_for_alfa_GH_Pages/static/media/logo-svgrepo-com.23494fbc051ef2165e3a.svg",
-    "static/media/delete.svg": "/Rusflipz/test_for_alfa_GH_Pages/static/media/delete.1fc4353853567b614825.svg",
-    "index.html": "/Rusflipz/test_for_alfa_GH_Pages/index.html",
-    "static/media/like.svg": "/Rusflipz/test_for_alfa_GH_Pages/static/media/like.6216aafd4a8adef11e99.svg",
-    "static/media/like_active.svg": "/Rusflipz/test_for_alfa_GH_Pages/static/media/like_active.8d3b508a98a65f952365.svg",
-    "main.4badc10d.css.map": "/Rusflipz/test_for_alfa_GH_Pages/static/css/main.4badc10d.css.map",
-    "main.85b8740b.js.map": "/Rusflipz/test_for_alfa_GH_Pages/static/js/main.85b8740b.js.map"
+    "main.css": "/Rusflipz/test_for_alfa/static/css/main.2134bba3.css",
+    "main.js": "/Rusflipz/test_for_alfa/static/js/main.85b8740b.js",
+    "static/media/1647189487_29-krot-info-p-ti-mne-nravishsya-mem-smeshnie-foto-33.jpg": "/Rusflipz/test_for_alfa/static/media/1647189487_29-krot-info-p-ti-mne-nravishsya-mem-smeshnie-foto-33.bc91c6c4fc8c1fc1e996.jpg",
+    "static/media/logo-svgrepo-com.svg": "/Rusflipz/test_for_alfa/static/media/logo-svgrepo-com.23494fbc051ef2165e3a.svg",
+    "static/media/delete.svg": "/Rusflipz/test_for_alfa/static/media/delete.1fc4353853567b614825.svg",
+    "index.html": "/Rusflipz/test_for_alfa/index.html",
+    "static/media/like.svg": "/Rusflipz/test_for_alfa/static/media/like.6216aafd4a8adef11e99.svg",
+    "static/media/like_active.svg": "/Rusflipz/test_for_alfa/static/media/like_active.8d3b508a98a65f952365.svg",
+    "main.2134bba3.css.map": "/Rusflipz/test_for_alfa/static/css/main.2134bba3.css.map",
+    "main.85b8740b.js.map": "/Rusflipz/test_for_alfa/static/js/main.85b8740b.js.map"
   },
   "entrypoints": [
-    "static/css/main.4badc10d.css",
+    "static/css/main.2134bba3.css",
     "static/js/main.85b8740b.js"
   ]
 }
