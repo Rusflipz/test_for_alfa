@@ -1,21 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import './index.css';
-import App from './components/App/App';
-import { Provider } from 'react-redux';
-import { rootReducer } from './services/reducers/rootReducer';
-import { configureStore } from '@reduxjs/toolkit';
-import { BrowserRouter as Router } from "react-router-dom";
+import {Provider} from 'react-redux';
+import {BrowserRouter as Router} from "react-router-dom";
 
-export const store = configureStore({ reducer: rootReducer });
+import App from './components/App/App';
+import {store} from "./store";
+
+import './index.css';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <Router>
-        <App />
-      </Router>
-    </Provider>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <Provider store={store}>
+            <Router>
+                <App/>
+            </Router>
+        </Provider>
+    </React.StrictMode>,
+    document.getElementById('root')
 );

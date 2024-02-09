@@ -1,55 +1,72 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Dispatch } from "redux";
-import { dataSelector, setFilterArrayState, setIsArrayEmpty } from "../../services/slice/data";
-import { Icard } from "../../utils/Interface";
+import {useEffect, useState} from "react";
+import {useSelector} from "react-redux";
+
+import {dataSelector} from "../../store/slice/data";
+import {TCard} from "../../types/Card";
 import Card from "../Card/Card";
+
 import styles from "./Cards.module.css";
 
-function Cards() {
 
-    const dispatch: Dispatch<any> = useDispatch();
+const CardList = ({isFiltered, array}: { isFiltered: boolean, array: TCard[] }) => {
+    const formattedArray = isFiltered ? array.filter((card) => card?.isLike) : array
 
-    const { array, isFiltered, isFilteredArrayEmpty, isArrayEmpty } = useSelector(dataSelector);
+    return <div className={styles.conteiner}>
+        {formattedArray?.map(({...elem}: TCard, index: number) =>
+            <div key={index}>
+                <Card item={elem}/>
+            </div>)}
+    </div>
+}
+
+const HintText = ({isArrayEmpty, isFilteredArrayEmpty}: { isArrayEmpty: boolean, isFilteredArrayEmpty: boolean }) => {
+    if (isArrayEmpty) {
+        return <p className={styles.text}>
+            Вы удалили все карточки! Добавьте хотябы одну!
+        </p>
+    }
+    if (isFilteredArrayEmpty && !isArrayEmpty) {
+        return <p className={styles.text}>
+            Чтобы тут появились карточки, вы должны нажать на лайк хотябы на одной из них!
+        </p>
+    }
+
+    return null
+}
+
+export const Cards = () => {
+
+    const {array, isFiltered} = useSelector(dataSelector);
+
+    const [isFilteredArrayEmpty, setIsFilteredArrayEmpty] = useState(false)
+
+    const [isArrayEmpty, setIsArrayEmpty] = useState(false)
 
     useEffect(() => {
-        if (isFiltered && array.filter((elem: { isLike: boolean; }) =>
-            elem.isLike === true).length === 0) {
-            dispatch(setFilterArrayState(true))
-        } else {
-            dispatch(setFilterArrayState(false))
+        if (isFiltered && array.filter((elem) =>
+            elem?.isLike).length === 0) {
+            setIsFilteredArrayEmpty(true)
+
+            return;
         }
-    }, [dispatch, isFiltered, array])
+
+        setIsFilteredArrayEmpty(false)
+
+    }, [isFiltered, array])
 
     useEffect(() => {
-        if (array && array.length === 0) {
-            dispatch(setIsArrayEmpty(true))
+        if (array && array?.length === 0) {
+            setIsArrayEmpty(true)
         } else {
-            dispatch(setIsArrayEmpty(false))
+            setIsArrayEmpty(false)
         }
-    }, [dispatch, array])
+    }, [array])
+
 
     return (
-        <>
-            <div className={styles.main}>
-                {isArrayEmpty ?
-                    <p className={styles.text}>
-                        Вы удалили все карточки! Добавьте хотябы одну!
-                    </p> : <></>}
-                {isFilteredArrayEmpty && !isArrayEmpty ?
-                    <p className={styles.text}>
-                        Чтобы тут появились карточки, вы должны нажать на лайк хотябы на одной из них!
-                    </p> : <></>}
-                {array && !isFiltered ? <div className={styles.conteiner}>{
-                    array.map(({ ...elem }: Icard, index: number) =>
-                        <div key={index}><Card item={elem}></Card></div>)}</div> :
-                    <div className={styles.conteiner}>{
-                        array && array.filter((elem: { isLike: boolean; }) =>
-                            elem.isLike === true).map(({ ...elem }: Icard, index: number) =>
-                                <div key={index}><Card item={elem}></Card></div>)} </div>}
-            </div>
-        </>
-    );
+        <div className={styles.main}>
+            <HintText isArrayEmpty={isArrayEmpty} isFilteredArrayEmpty={isFilteredArrayEmpty}/>
+            <CardList isFiltered={isFiltered} array={array}/>
+        </div>
+    )
 };
-
-export default Cards;

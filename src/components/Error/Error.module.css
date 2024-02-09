@@ -1,4 +1,4 @@
-.Main {
+.main {
     position: relative;
     background-image: url(../../images/1647189487_29-krot-info-p-ti-mne-nravishsya-mem-smeshnie-foto-33.jpg);
     width: 100%;
@@ -7,7 +7,7 @@
     background-size: cover;
 }
 
-.Main::before {
+.main::before {
     position: absolute;
     display: flex;
     content: '';
@@ -17,7 +17,7 @@
     opacity: 0.4;
 }
 
-.Text {
+.text {
     margin: auto;
     padding-top: calc(50vh - 50px);
     width: fit-content;

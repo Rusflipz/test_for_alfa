@@ -1,11 +1,9 @@
 import styles from "./Error.module.css";
 
-function Error() {
-  return (
-    <div className={`${styles.Main}`}>
-      <p className={`${styles.Text}`}>Ошибка: 404</p>
+const Error = () => (
+    <div className={`${styles.main}`}>
+        <p className={`${styles.text}`}>Ошибка: 404</p>
     </div>
-  );
-}
+)
 
 export default Error;

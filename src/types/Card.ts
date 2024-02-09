@@ -1,4 +1,4 @@
-export interface Icard {
+export type TCard = {
     address: object;
     avatar: string;
     credit_card: object;

@@ -1,46 +1,50 @@
-import { useEffect } from "react";
-import { Route, useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { dataSelector } from "../../services/slice/data";
-import { getCards } from "../../services/api";
-import styles from "./App.module.css";
-import Cards from "../Cards/Cards";
-import Header from "../Header/Header";
-import Buttons from "../Buttons/Buttons";
+import {useEffect} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {Route, Switch, useHistory} from "react-router-dom";
+
+import {dataSelector} from "../../store/slice/data";
+import {TDispatch} from "../../store/types/types";
+import {getCards} from "../../utils/api";
+import {Buttons} from "../Buttons/Buttons";
+import {Cards} from "../Cards/Cards";
 import Error from "../Error/Error";
-import Loading from "../Loading/Loading";
-import { Dispatch } from "redux";
+import {Header} from "../Header/Header";
+import {WithLoader} from "../Hoc/withLoader";
 
-function App() {
+import styles from "./App.module.css";
 
-  const history = useHistory();
-  const dispatch: Dispatch<any> = useDispatch()
-  const { cardsLoading, cardsError } = useSelector(dataSelector);
+const App = () => {
 
-  useEffect(() => {
-    dispatch(getCards())
-  }, [dispatch])
+    const history = useHistory();
+    const dispatch: TDispatch = useDispatch()
+    const {cardsError} = useSelector(dataSelector);
 
-  useEffect(() => {
-    if (cardsError) {
-      history.push("/error");
-    }
-  }, [cardsError, history])
+    useEffect(() => {
+        dispatch(getCards())
+    }, [])
 
-  return (
-    <>
-      <Route path={"/error"} exact={true}>
-        <Error></Error>
-      </Route>
-      <Route path={"/"} exact={true}>
-        <div className={`${styles.App}`}>
-          <Header></Header>
-          <Buttons></Buttons>
-          {cardsLoading ? <Loading></Loading> : <Cards></Cards>}
-        </div>
-      </Route>
-    </>
-  );
+    useEffect(() => {
+        if (cardsError) {
+            history.push("/error");
+        }
+    }, [cardsError, history])
+
+    return (
+        <Switch>
+                <Route path='/error' exact>
+                    <Error/>
+                </Route>
+                <Route path='*'>
+                    <div className={`${styles.app}`}>
+                        <Header/>
+                        <Buttons/>
+                        <WithLoader>
+                            <Cards/>
+                        </WithLoader>
+                    </div>
+                </Route>
+            </Switch>
+    );
 }
 
 export default App;
